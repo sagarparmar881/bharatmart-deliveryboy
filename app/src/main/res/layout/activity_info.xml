@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="10dp"
-            android:src="@drawable/ic_scooter" />
+            android:padding="100dp"
+            android:src="@drawable/ic_scooter_2" />
     </RelativeLayout>
 
     <LinearLayout
@@ -34,7 +34,7 @@
             android:layout_marginTop="25dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Fast,reliable\n&amp; Save time \ndelivery"
+            android:text="Bharat Mart\n Delivery Boy App"
             android:textColor="@color/colorBalck"
             android:textSize="28dp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Fast &amp; free delivery to your home or office"
+            android:text="Fast &amp; Free Delivery to your doorstep!"
             android:textColor="@color/colorBalck" />
 
         <View
@@ -62,7 +62,7 @@
             android:background="@drawable/button_round"
             android:gravity="center"
 
-            android:text="Login Now"
+            android:text="LOGIN"
             android:textColor="@color/colorWhite" />
 
     </LinearLayout>

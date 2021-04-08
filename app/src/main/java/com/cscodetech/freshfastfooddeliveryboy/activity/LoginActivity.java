@@ -53,6 +53,8 @@ public class LoginActivity extends AppCompatActivity implements GetResult.MyList
         getSupportActionBar().hide();
         custPrograssbar = new CustPrograssbar();
         sessionManager = new SessionManager(this);
+        edUsername.setText("john@delivery.com");
+        edPassword.setText("john");
     }
 
     @OnClick(R.id.txt_login)
