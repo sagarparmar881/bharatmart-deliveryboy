@@ -3,6 +3,8 @@ package com.cscodetech.freshfastfooddeliveryboy.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +37,7 @@ import static com.cscodetech.freshfastfooddeliveryboy.utils.SessionManager.currn
 public class LoginActivity extends AppCompatActivity implements GetResult.MyListener {
 
     @BindView(R.id.ed_username)
-    TextInputEditText edUsername;
+    AutoCompleteTextView edUsername;
     @BindView(R.id.ed_password)
     TextInputEditText edPassword;
     @BindView(R.id.chk_remember)
@@ -45,6 +47,18 @@ public class LoginActivity extends AppCompatActivity implements GetResult.MyList
     CustPrograssbar custPrograssbar;
     SessionManager sessionManager;
 
+    //pre-defined logins
+    String[] emails = {
+            "dayananda@bharatmart.com", "keshav@bharatmart.com", "krishna@bharatmart.com",
+            "patanjali@bharatmart.com", "manas@bharatmart.com", "shudraka@bharatmart.com",
+            "mahava@bharatmart.com", "daksha@bharatmart.com", "aakash@bharatmart.com",
+            "ragunath@bharatmart.com", "jaswant@bharatmart.com", "nakula@bharatmart.com",
+            "jeet@bharatmart.com", "shanti@bharatmart.com", "vineet@bharatmart.com",
+            "vasishtha@bharatmart.com", "sooraj@bharatmart.com", "pravarasena@bharatmart.com",
+            "surendranath@bharatmart.com", "pranav@bharatmart.com"
+            };
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +67,13 @@ public class LoginActivity extends AppCompatActivity implements GetResult.MyList
         getSupportActionBar().hide();
         custPrograssbar = new CustPrograssbar();
         sessionManager = new SessionManager(this);
-        edUsername.setText("john@delivery.com");
-        edPassword.setText("john");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_singlechoice, emails);
+        AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.ed_username);
+        acTextView.setAdapter(adapter);
+        acTextView.setThreshold(1);
+
+        edPassword.setText("admin");
     }
 
     @OnClick(R.id.txt_login)
